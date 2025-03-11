@@ -3,30 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Floya Browser</title>
+    <title>Iceberg Web Browser</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Floya-dev/iceberg-web-browser/refs/heads/main/iceberg.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Background Blur */
+        /* Background Blur Effect */
         .bg-blur::before {
             content: "";
             position: absolute;
             inset: 0;
-            background: url('https://your-background-image-url.com') center/cover no-repeat;
-            filter: blur(12px);
+            background: url('https://raw.githubusercontent.com/Floya-dev/iceberg-web-browser/refs/heads/main/iceberg2.jpg') center/cover no-repeat;
+            filter: blur(15px);
             z-index: -1;
         }
 
-        /* Cyberpunk Glow */
+        /* Glow Effect */
         .glow {
-            box-shadow: 0 0 12px rgba(0, 255, 128, 0.6);
+            box-shadow: 0 0 16px rgba(0, 255, 128, 0.5);
+        }
+
+        /* Fade-in Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
-<body class="bg-black text-white flex flex-col items-center justify-center h-screen relative bg-blur">
+<body class="bg-black text-white flex flex-col items-center justify-center min-h-screen relative bg-blur">
 
-    <!-- Browser Window -->
-    <div class="bg-neutral-900/80 backdrop-blur-xl rounded-2xl w-[800px] h-[500px] shadow-xl flex flex-col">
-        
+    <!-- Hero Section -->
+    <div class="text-center">
+        <h1 class="text-5xl font-bold text-white mb-4">Iceberg Web Browser</h1>
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto">Surf with confidence, browse with security</p>
+    </div>
+
+    <!-- Browser Preview (Blurred Glass Effect) -->
+    <div class="bg-neutral-900/70 backdrop-blur-xl rounded-2xl w-[800px] h-[400px] shadow-xl flex flex-col mt-10 border border-neutral-700 fade-in">
         <!-- Top Bar -->
         <div class="bg-neutral-800/60 backdrop-blur-lg px-4 py-2 flex items-center justify-between rounded-t-2xl">
             <div class="flex space-x-2">
@@ -34,23 +54,46 @@
                 <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
                 <div class="w-3 h-3 bg-green-500 rounded-full"></div>
             </div>
-            <p class="text-gray-400 text-sm font-mono">Floya Browser</p>
+            <p class="text-gray-400 text-sm font-mono">iceberg://new-tab</p>
             <div></div> <!-- Spacer -->
         </div>
 
-        <!-- Search Bar -->
-        <div class="flex-1 flex items-center justify-center">
+        <!-- Browser Window Content -->
+        <div class="flex-1 flex flex-col items-center justify-center">
+            <h2 class="text-2xl font-semibold text-gray-200">Customizable. Secure. Controllable.</h2>
+            <p class="text-gray-400 mt-2">Perfect web browser for parents, companies, home.</p>
             <input type="text" placeholder="Search the web..." 
-                class="w-3/4 p-4 text-lg text-gray-200 bg-neutral-800/70 backdrop-blur-md border border-green-400 rounded-xl outline-none focus:ring-2 focus:ring-green-500 glow transition">
+                class="w-3/4 p-4 text-lg text-gray-200 bg-neutral-800/70 backdrop-blur-md border border-green-400 rounded-xl outline-none focus:ring-2 focus:ring-green-500 glow transition mt-4">
         </div>
+    </div>
 
-        <!-- Bottom Links -->
-        <div class="bg-neutral-800/60 backdrop-blur-lg px-6 py-3 flex justify-between rounded-b-2xl">
-            <a href="#" class="text-green-400 hover:underline text-sm">Settings</a>
-            <a href="#" class="text-green-400 hover:underline text-sm">Bookmarks</a>
-            <a href="#" class="text-green-400 hover:underline text-sm">History</a>
+    <!-- Features Section -->
+    <div class="mt-16 max-w-4xl text-center fade-in">
+        <h2 class="text-4xl font-bold text-white mb-6">Why Choose Iceberg?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="p-6 bg-neutral-900/70 backdrop-blur-xl rounded-lg border border-neutral-700 shadow-md">
+                <h3 class="text-xl font-semibold text-green-400 mb-2">🔒 Security</h3>
+                <p class="text-gray-300 text-sm">Our browser is built with addons, that are hand picked for the most secure browsing experience.</p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="p-6 bg-neutral-900/70 backdrop-blur-xl rounded-lg border border-neutral-700 shadow-md">
+                <h3 class="text-xl font-semibold text-green-400 mb-2">✂️ Independance</h3>
+                <p class="text-gray-300 text-sm">The contributors are independant students of IT and Cyber Security.</p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="p-6 bg-neutral-900/70 backdrop-blur-xl rounded-lg border border-neutral-700 shadow-md">
+                <h3 class="text-xl font-semibold text-green-400 mb-2">🛡️ Blocklist</h3>
+                <p class="text-gray-300 text-sm">The main thing we are introducing is a blocklist, blocking websites that are potentionally dangerous for downloading malware.</p>
+            </div>
         </div>
+    </div>
 
+    <!-- Call to Action -->
+    <div class="mt-16 fade-in">
+        <a href="#" class="bg-green-500 hover:bg-green-400 text-black px-6 py-3 rounded-lg text-lg font-semibold transition">
+            Download Now
+        </a>
     </div>
 
 </body>
